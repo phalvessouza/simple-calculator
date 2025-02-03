@@ -12,6 +12,7 @@ body {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 320px; /* Defina uma largura fixa para a calculadora */
 }
 
 .calculator-screen {
@@ -26,11 +27,13 @@ body {
     font-size: 2em;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    box-sizing: border-box; /* Inclua padding e border no tamanho total */
 }
 
 .calculator-buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 1px; /* Adicione um pequeno espaço entre os botões */
 }
 
 .btn {
@@ -39,6 +42,7 @@ body {
     border: 1px solid #ccc;
     background-color: #f9f9f9;
     cursor: pointer;
+    box-sizing: border-box; /* Inclua padding e border no tamanho total */
 }
 
 .btn:hover {

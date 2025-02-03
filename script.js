@@ -12,11 +12,19 @@ function appendNumber(number) {
 }
 
 function appendOperator(operator) {
-  document.getElementById("result").value += operator;
+  var result = document.getElementById("result").value;
+  if (result === "" || /[+\-*/]$/.test(result.slice(-1))) {
+    document.getElementById("result").value = result.slice(0, -1) + operator;
+  } else {
+    document.getElementById("result").value += operator;
+  }
 }
 
 function calculate() {
   var result = document.getElementById("result").value;
+  if (/[+\-*/]$/.test(result)) {
+    result = result.slice(0, -1);
+  }
   try {
     document.getElementById("result").value = eval(result);
   } catch (error) {
